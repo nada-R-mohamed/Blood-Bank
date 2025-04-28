@@ -21,8 +21,8 @@ return new class extends Migration
             $table->unsignedBigInteger('blood_type_id');
             $table->unsignedBigInteger('city_id');
             $table->foreign('city_id')->references('id')->on('cities');
-            $table->dateTime('last_donation_date');
-            $table->enum('status', ["active","inactive"]);
+            $table->dateTime('last_donation_date')->nullable();
+            $table->enum('status', ["active","inactive"])->default("active");
             $table->timestamps();
 
         });

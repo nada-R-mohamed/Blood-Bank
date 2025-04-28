@@ -8,12 +8,15 @@ use App\Models\BloodType;
 use App\Models\Governorate;
 use App\Models\Notification;
 use App\Models\DonationRequest;
+use Laravel\Sanctum\HasApiTokens;
 use App\Models\ClientNotification;
 use App\Models\CommunicationRequest;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Client extends Model
+
+class Client extends Authenticatable
 {
+    use HasApiTokens;
     protected $fillable = [
         'name',
         'email',    
