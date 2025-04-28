@@ -1,15 +1,14 @@
 <?php
 
 use App\Http\Controllers\Api\Auth\ForgetPasswordController;
+use App\Http\Controllers\Api\GeneralController;
 use App\Http\Controllers\Api\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\AuthController;
 
-// Route::get('/user', function (Request $request) {
-//     return $request->user();
-// })->middleware('auth:sanctum');
 
+////////////        Auth        ////////////
 Route::post('/register',[AuthController::class ,'register']);
 Route::post('/login',[AuthController::class ,'login']);
 Route::middleware('auth:sanctum')->group(function () {
@@ -17,5 +16,16 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('profile',[ProfileController::class,'getProfile']);
     Route::post('update-profile',[ProfileController::class,'updateProfile']);
 });
+
+////////////     Reset password      ////////////
 Route::post('forget-password',[ForgetPasswordController::class,'forgetPassword']);
 Route::post('new-password',[ForgetPasswordController::class,'newPassword']);
+
+////////////      General Apis      ////////////
+Route::get('governorates',[GeneralController::class,'governorates']);
+Route::get('cities',[GeneralController::class,'cities']);
+Route::get('categories',[GeneralController::class,'categories']);
+Route::get('blood-types',[GeneralController::class,'bloodTypes']);
+
+
+
