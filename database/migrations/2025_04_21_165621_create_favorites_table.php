@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('favorites', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('client_id');
-            $table->unsignedBigInteger('articles_id');
+            $table->unsignedBigInteger('article_id');
             $table->timestamps();
 
         });
