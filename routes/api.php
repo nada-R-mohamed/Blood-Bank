@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ArticleController;
 use App\Http\Controllers\Api\Auth\ForgetPasswordController;
 use App\Http\Controllers\Api\GeneralController;
 use App\Http\Controllers\Api\ProfileController;
@@ -27,5 +28,11 @@ Route::get('cities',[GeneralController::class,'cities']);
 Route::get('categories',[GeneralController::class,'categories']);
 Route::get('blood-types',[GeneralController::class,'bloodTypes']);
 
+////////////        Articles        ///////////////
+
+Route::get('articles',[ArticleController::class,'articles']);
+Route::get('article',[ArticleController::class,'article']);
+Route::get('favorites',[ArticleController::class,'favoriteArticles']);
+Route::post('favorites',[ArticleController::class,'toggleFavoriteArticles']);
 
 
