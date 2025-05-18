@@ -57,9 +57,9 @@ class ArticleController extends Controller
 
         $result = $client->articles()->toggle($request->article_id);
 
-        if (empty($result['attached']) && empty($result['detached'])) {
-            return ApiResponse::sendResponse(200, 'No change in favorites', ['articles' => []]);
-        }
+//        if (empty($result['attached']) && empty($result['detached'])) {
+//            return ApiResponse::sendResponse(200, 'No change in favorites', ['articles' => []]);
+//        }
 
         $status = !empty($result['attached']) ? 'added to favorites' : 'removed from favorites';
 

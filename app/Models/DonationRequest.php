@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DonationRequest extends Model
 {
+    protected $fillable = ['patient_name', 'patient_age', 'patient_phone', 'hospital_name', 'hospital_address', 'city_id', 'blood_type_id', 'bags_num', 'details', 'latitude', 'longitude'];
     public function client()
     {
         return $this->belongsTo(Client::class);

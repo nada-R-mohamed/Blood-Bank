@@ -77,7 +77,6 @@ class AuthController extends Controller
             return ApiResponse::sendResponse(500, 'Something went wrong');
         }
     }
-
     public function logout(Request $request) : JsonResponse
     {
         try {
@@ -89,4 +88,5 @@ class AuthController extends Controller
             return ApiResponse::sendResponse(500, 'Something went wrong');
         }
     }
+
 }
