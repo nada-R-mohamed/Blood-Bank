@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\GovernorateController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -8,3 +9,5 @@ Route::get('/', function () {
 Route::get('/index', function () {
     return view('dashboard.index');
 })->name('index');
+
+Route::resource('governorates', GovernorateController::class);
