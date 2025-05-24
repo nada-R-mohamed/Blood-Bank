@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\CityController;
 use App\Http\Controllers\Dashboard\GovernorateController;
 use Illuminate\Support\Facades\Route;
@@ -13,3 +14,4 @@ Route::get('/index', function () {
 
 Route::resource('governorates', GovernorateController::class);
 Route::resource('cities', CityController::class);
+Route::resource('categories', CategoryController::class);
