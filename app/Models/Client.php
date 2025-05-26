@@ -19,16 +19,17 @@ class Client extends Authenticatable
     use HasApiTokens;
     protected $fillable = [
         'name',
-        'email',    
+        'email',
         'phone',
         'password',
         'blood_type_id',
         'city_id',
-        'last_donation_date'
-       
+        'last_donation_date',
+        'status',
+
     ];
     public function communicationRequests(){
-        
+
         return $this->hasMany(CommunicationRequest::class);
     }
     public function city (){
@@ -57,6 +58,26 @@ class Client extends Authenticatable
     public function bloodType()
     {
     return $this->belongsTo(BloodType::class);
+    }
+    //scopes
+    public function scopeActive($query)
+    {
+        return $query->where('status', 'active');
+    }
+
+    public function scopeInactive($query)
+    {
+        return $query->where('status', 'inactive');
+    }
+
+    public function scopeSearch($query, $term)
+    {
+        return $query->where(function ($q) use ($term) {
+            $q->where('name', 'like', "%{$term}%")
+                ->orWhere('email', 'like', "%{$term}%")
+                ->orWhere('phone', 'like', "%{$term}%")
+                ->orWhere('city_id', 'like', "%{$term}%");
+        });
     }
 
 }
