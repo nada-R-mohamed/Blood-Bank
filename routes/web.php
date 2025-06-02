@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\ArticleController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\CityController;
 use App\Http\Controllers\Dashboard\ClientController;
@@ -20,3 +21,4 @@ Route::get('clients', [ClientController::class, 'index'])->name('clients.index')
 Route::get('clients/{client}', [ClientController::class, 'show'])->name('clients.show');
 Route::delete('clients/{client}', [ClientController::class, 'destroy'])->name('clients.destroy');
 Route::patch('clients/{client}/toggle-status', [ClientController::class, 'toggleStatus'])->name('clients.toggle-status');
+Route::resource('articles',ArticleController::class);
