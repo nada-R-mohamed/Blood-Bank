@@ -8,6 +8,7 @@
                     Dashboard
                 </a>
                 <div class="sb-sidenav-menu-heading">Modules</div>
+{{--                governorate--}}
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseGovernorates"
                    aria-expanded="false" aria-controls="collapseGovernorates">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -20,6 +21,7 @@
                         <a class="nav-link" href="{{ route('governorates.index') }}">All</a>
                     </nav>
                 </div>
+{{--                city--}}
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCities"
                    aria-expanded="false" aria-controls="collapseCities">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -32,6 +34,7 @@
                         <a class="nav-link" href="{{ route('cities.index') }}">All</a>
                     </nav>
                 </div>
+{{--                categories--}}
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCategories"
                    aria-expanded="false" aria-controls="collapseCategories">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -94,6 +97,19 @@
                      data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{ route('donation-requests.index') }}">All</a>
+                    </nav>
+                </div>
+{{--                setting--}}
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseSetting"
+                   aria-expanded="false" aria-controls="collapseSetting">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Setting
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseSetting" aria-labelledby="headingOne"
+                     data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ route('settings.edit') }}">Edit</a>
                     </nav>
                 </div>
             </div>

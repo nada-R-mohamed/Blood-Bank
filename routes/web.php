@@ -7,6 +7,7 @@ use App\Http\Controllers\Dashboard\ClientController;
 use App\Http\Controllers\Dashboard\CommunicationRequestController;
 use App\Http\Controllers\Dashboard\DonationRequestController;
 use App\Http\Controllers\Dashboard\GovernorateController;
+use App\Http\Controllers\Dashboard\SettingController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -29,3 +30,5 @@ Route::delete('/communication-requests/{communicationRequest}', [CommunicationRe
 Route::get('/donation-requests', [DonationRequestController::class, 'index'])->name('donation-requests.index');
 Route::get('/donation-requests/{donationRequest}', [DonationRequestController::class, 'show'])->name('donation-requests.show');
 Route::delete('/donation-requests/{donationRequest}', [DonationRequestController::class, 'destroy'])->name('donation-requests.destroy');
+Route::get('/settings/edit', [SettingController::class, 'edit'])->name('settings.edit');
+Route::put('/settings/update', [SettingController::class, 'update'])->name('settings.update');
