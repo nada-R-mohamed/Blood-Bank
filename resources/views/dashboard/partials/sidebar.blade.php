@@ -70,6 +70,19 @@
                         <a class="nav-link" href="{{ route('articles.index') }}">All</a>
                     </nav>
                 </div>
+{{--              communication Request      --}}
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseContactus"
+                   aria-expanded="false" aria-controls="collapseContactus">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Communication Request
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseContactus" aria-labelledby="headingOne"
+                     data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ route('communication-requests.index') }}">All</a>
+                    </nav>
+                </div>
             </div>
         </div>
         <div class="sb-sidenav-footer">

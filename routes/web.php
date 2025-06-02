@@ -4,6 +4,7 @@ use App\Http\Controllers\Dashboard\ArticleController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\CityController;
 use App\Http\Controllers\Dashboard\ClientController;
+use App\Http\Controllers\Dashboard\CommunicationRequestController;
 use App\Http\Controllers\Dashboard\GovernorateController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,5 @@ Route::get('clients/{client}', [ClientController::class, 'show'])->name('clients
 Route::delete('clients/{client}', [ClientController::class, 'destroy'])->name('clients.destroy');
 Route::patch('clients/{client}/toggle-status', [ClientController::class, 'toggleStatus'])->name('clients.toggle-status');
 Route::resource('articles',ArticleController::class);
+Route::get('/communication-requests', [CommunicationRequestController::class, 'index'])->name('communication-requests.index');
+Route::delete('/communication-requests/{communicationRequest}', [CommunicationRequestController::class, 'destroy'])->name('communication-requests.destroy');
