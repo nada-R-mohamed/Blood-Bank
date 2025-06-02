@@ -29,4 +29,24 @@ class DonationRequest extends Model
     {
     return $this->hasMany(Notification::class);
     }
+    public function scopeSearch($query, $term)
+    {
+        return $query->where(function ($q) use ($term) {
+            $q->where('patient_name', 'like', "%{$term}%")
+                ->orWhere('patient_phone', 'like', "%{$term}%")
+                ->orWhere('hospital_name', 'like', "%{$term}%")
+                ->orWhere('hospital_address', 'like', "%{$term}%")
+                ->orWhere('details', 'like', "%{$term}%");
+        });
+    }
+
+    public function scopeBloodType($query, $bloodTypeId)
+    {
+        return $query->where('blood_type_id', $bloodTypeId);
+    }
+
+    public function scopeCity($query, $cityId)
+    {
+        return $query->where('city_id', $cityId);
+    }
 }

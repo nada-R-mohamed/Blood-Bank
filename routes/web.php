@@ -5,6 +5,7 @@ use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\CityController;
 use App\Http\Controllers\Dashboard\ClientController;
 use App\Http\Controllers\Dashboard\CommunicationRequestController;
+use App\Http\Controllers\Dashboard\DonationRequestController;
 use App\Http\Controllers\Dashboard\GovernorateController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,6 @@ Route::patch('clients/{client}/toggle-status', [ClientController::class, 'toggle
 Route::resource('articles',ArticleController::class);
 Route::get('/communication-requests', [CommunicationRequestController::class, 'index'])->name('communication-requests.index');
 Route::delete('/communication-requests/{communicationRequest}', [CommunicationRequestController::class, 'destroy'])->name('communication-requests.destroy');
+Route::get('/donation-requests', [DonationRequestController::class, 'index'])->name('donation-requests.index');
+Route::get('/donation-requests/{donationRequest}', [DonationRequestController::class, 'show'])->name('donation-requests.show');
+Route::delete('/donation-requests/{donationRequest}', [DonationRequestController::class, 'destroy'])->name('donation-requests.destroy');

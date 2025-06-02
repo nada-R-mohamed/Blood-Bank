@@ -83,6 +83,19 @@
                         <a class="nav-link" href="{{ route('communication-requests.index') }}">All</a>
                     </nav>
                 </div>
+{{--                donation request--}}
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDonation"
+                   aria-expanded="false" aria-controls="collapseDonation">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Donation Request
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseDonation" aria-labelledby="headingOne"
+                     data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ route('donation-requests.index') }}">All</a>
+                    </nav>
+                </div>
             </div>
         </div>
         <div class="sb-sidenav-footer">
